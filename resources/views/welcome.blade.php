@@ -14,9 +14,11 @@
     ];
     $birthdayImage = asset(rawurlencode('cumpleaños.jpg'));
     $birthdaySong = asset(rawurlencode('Las mañanitas.mp3'));
+    $pageTitle = "Feliz cumpleaños, {$to}";
+    $pageDescription = "Una sorpresa de cumpleaños para {$to}, hecha con mucho amor.";
 @endphp
 
-<x-love.layout :title="$to">
+<x-love.layout :title="$pageTitle" :description="$pageDescription">
     <div x-data="love">
         <x-love.envelope :from="$from" :to="$to" />
 

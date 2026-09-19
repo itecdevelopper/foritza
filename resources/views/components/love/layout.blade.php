@@ -1,4 +1,13 @@
-@props(['title' => null])
+@props([
+    'title' => null,
+    'description' => 'Una sorpresa de cumpleaños hecha con mucho amor.',
+])
+
+@php
+    $pageTitle = $title ?? config('app.name', 'Feliz Cumpleaños');
+    $shareImage = asset('og-cake.png');
+    $canonicalUrl = url()->current();
+@endphp
 
 <!DOCTYPE html>
 <html lang="es">
@@ -8,7 +17,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#fbcfe8">
 
-    <title>{{ $title ?? config('app.name', 'Feliz Cumpleaños Itza') }}</title>
+    <title>{{ $pageTitle }}</title>
+    <meta name="description" content="{{ $description }}">
+    <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/svg+xml">
+    <link rel="icon" href="{{ asset('favicon.png') }}" type="image/png" sizes="512x512">
+    <link rel="apple-touch-icon" href="{{ asset('favicon.png') }}">
+    <link rel="canonical" href="{{ $canonicalUrl }}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_MX">
+    <meta property="og:url" content="{{ $canonicalUrl }}">
+    <meta property="og:title" content="{{ $pageTitle }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:image" content="{{ $shareImage }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="Pastel rosa de cumpleaños con velas encendidas">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $pageTitle }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    <meta name="twitter:image" content="{{ $shareImage }}">
+    <meta name="twitter:image:alt" content="Pastel rosa de cumpleaños con velas encendidas">
 
     @fonts
 

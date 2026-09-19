@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs><linearGradient id="cake" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#fb7185"/><stop offset="1" stop-color="#e11d48"/></linearGradient></defs>
+  <rect width="64" height="64" rx="16" fill="#fff1f2"/>
+  <path d="M32 7c-3 4-3 7 0 10 3-3 3-6 0-10Z" fill="#f59e0b"/><path d="M31 16h2v10h-2z" fill="#7c2d12"/>
+  <path d="M15 29h34v8H15z" fill="#fff"/><path d="M17 35h30v17H17z" fill="url(#cake)"/>
+  <path d="M15 30c3 5 7-2 11 3 4-5 8 2 12-3 4 5 8-2 11 3v5H15z" fill="#fbcfe8"/>
+  <circle cx="24" cy="43" r="2" fill="#fde68a"/><circle cx="32" cy="46" r="2" fill="#fff"/><circle cx="40" cy="42" r="2" fill="#fde68a"/>
+  <path d="M12 53h40" stroke="#be123c" stroke-linecap="round" stroke-width="3"/>
+</svg>
