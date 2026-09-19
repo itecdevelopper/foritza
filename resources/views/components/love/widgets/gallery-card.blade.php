@@ -17,7 +17,7 @@
         {{-- Contenedor del video --}}
         <div class="relative overflow-hidden rounded-2xl bg-black shadow-lg ring-1 ring-pink-100">
             <video id="birthdayVideo" class="block w-full" preload="metadata" playsinline controls>
-                <source src="{{ asset('Feliz Cumpleaños Mich.mp4') }}" type="video/mp4">
+                <source src="{{ asset('Feliz_cumple_mich.mp4') }}" type="video/mp4">
 
                 Tu navegador no soporta la reproducción de video.
             </video>
