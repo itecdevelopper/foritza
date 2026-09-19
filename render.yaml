@@ -5,7 +5,7 @@ services:
     dockerfilePath: ./Dockerfile
     plan: free
     autoDeploy: true
-    healthCheckPath: /
+    healthCheckPath: /up
     envVars:
       - key: APP_ENV
         value: production
@@ -24,9 +24,9 @@ services:
       - key: DB_DATABASE
         value: foritza
       - key: DB_USERNAME
-        value: TU_USUARIO_TIDB
+        sync: false
       - key: DB_PASSWORD
-        value: TU_PASSWORD_TIDB
+        sync: false
       - key: CACHE_STORE
         value: file
       - key: SESSION_DRIVER

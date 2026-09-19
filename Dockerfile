@@ -22,7 +22,7 @@ RUN apk add --no-cache \
     icu-dev \
     ca-certificates \
     && docker-php-ext-configure zip \
-    && docker-php-ext-install pdo pdo_sqlite zip intl opcache \
+    && docker-php-ext-install pdo pdo_mysql pdo_sqlite zip intl opcache \
     && rm -rf /var/cache/apk/*
 
 COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
@@ -34,9 +34,6 @@ RUN update-ca-certificates
 RUN composer install --no-interaction --prefer-dist --no-progress --no-dev --optimize-autoloader \
     && npm install --include=dev \
     && npm run build \
-    && php artisan config:cache \
-    && php artisan route:cache \
-    && php artisan view:cache \
     && php artisan storage:link \
     && mkdir -p /run/nginx /var/log/supervisord /var/run/php /var/www/html/storage/framework/sessions \
     && chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache /var/www/html/public \
