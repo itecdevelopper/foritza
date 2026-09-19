@@ -27,6 +27,7 @@ RUN apk add --no-cache \
 COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 
 COPY . /var/www/html
+COPY certs/isrgrootx1.pem /app/certs/isrgrootx1.pem
 
 RUN composer install --no-interaction --prefer-dist --no-progress --no-dev --optimize-autoloader \
     && npm install --include=dev \

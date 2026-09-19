@@ -12,6 +12,8 @@ if [ "${APP_ENV:-}" = "production" ]; then
     export SESSION_DRIVER="${SESSION_DRIVER:-file}"
     export CACHE_STORE="${CACHE_STORE:-file}"
     export QUEUE_CONNECTION="${QUEUE_CONNECTION:-sync}"
+    export MYSQL_ATTR_SSL_CA="${MYSQL_ATTR_SSL_CA:-/app/certs/isrgrootx1.pem}"
+    export MYSQL_ATTR_SSL_VERIFY_SERVER_CERT="${MYSQL_ATTR_SSL_VERIFY_SERVER_CERT:-true}"
 fi
 
 if [ -z "${APP_KEY:-}" ]; then

@@ -23,5 +23,7 @@ services:
         value: file
       - key: QUEUE_CONNECTION
         value: sync
+      - key: MYSQL_ATTR_SSL_CA
+        value: /app/certs/isrgrootx1.pem
       - key: MYSQL_ATTR_SSL_VERIFY_SERVER_CERT
         value: true
