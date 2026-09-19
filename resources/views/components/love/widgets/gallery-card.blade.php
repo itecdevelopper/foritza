@@ -2,14 +2,33 @@
 
 <x-love.widgets.card class="xl:col-span-12">
     <div class="mx-auto max-w-4xl">
-        <p class="text-xs font-semibold uppercase tracking-wide text-pink-400">Recuerdos</p>
-        <div class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-6">
-            @foreach ($memories as $memory)
-                <div
-                    class="flex aspect-square items-center justify-center rounded-xl bg-linear-to-br from-pink-200 to-rose-300 text-lg text-white shadow-inner ring-1 ring-pink-100/80 transition-transform duration-200 hover:scale-[1.02]">
-                    {{ $memory }}
-                </div>
-            @endforeach
+
+        {{-- Título --}}
+        <div class="mb-4 text-center">
+            <p class="text-xs font-semibold uppercase tracking-wide text-pink-400">
+                Recuerdo especial
+            </p>
+
+            <h2 class="mt-1 text-2xl font-bold text-gray-800">
+                Feliz Cumpleaños Mich ❤️
+            </h2>
         </div>
+
+        {{-- Contenedor del video --}}
+        <div class="relative overflow-hidden rounded-2xl bg-black shadow-lg ring-1 ring-pink-100">
+            <video id="birthdayVideo" class="block w-full" preload="metadata" playsinline controls>
+                <source src="{{ asset('Feliz Cumpleaños Mich.mp4') }}" type="video/mp4">
+
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </div>
+
+        {{-- Información --}}
+        <div class="mt-4 flex items-center justify-center">
+            <span class="inline-flex items-center rounded-full bg-pink-100 px-3 py-1 text-xs font-medium text-pink-700">
+                ❤️ Un recuerdo especial
+            </span>
+        </div>
+
     </div>
 </x-love.widgets.card>
