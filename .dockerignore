@@ -5,6 +5,7 @@ dist
 .gitignore
 .env
 .env.*
+!.env.example
 vendor
 storage/logs
 storage/framework/cache/*
