@@ -20,6 +20,7 @@ RUN apk add --no-cache \
     libzip-dev \
     oniguruma-dev \
     icu-dev \
+    ca-certificates \
     && docker-php-ext-configure zip \
     && docker-php-ext-install pdo pdo_sqlite zip intl opcache \
     && rm -rf /var/cache/apk/*
@@ -27,7 +28,8 @@ RUN apk add --no-cache \
 COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 
 COPY . /var/www/html
-COPY certs/isrgrootx1.pem /app/certs/isrgrootx1.pem
+COPY certs/isrgrootx1.pem /usr/local/share/ca-certificates/foritza-ca.pem
+RUN update-ca-certificates
 
 RUN composer install --no-interaction --prefer-dist --no-progress --no-dev --optimize-autoloader \
     && npm install --include=dev \
