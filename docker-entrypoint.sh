@@ -7,6 +7,13 @@ if [ ! -f .env ] && [ -f .env.example ]; then
     cp .env.example .env
 fi
 
+if [ "${APP_ENV:-}" = "production" ]; then
+    export APP_DEBUG="false"
+    export SESSION_DRIVER="${SESSION_DRIVER:-file}"
+    export CACHE_STORE="${CACHE_STORE:-file}"
+    export QUEUE_CONNECTION="${QUEUE_CONNECTION:-sync}"
+fi
+
 if [ -z "${APP_KEY:-}" ]; then
     php artisan key:generate --force >/dev/null 2>&1 || true
 fi
